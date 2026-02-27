@@ -1,0 +1,46 @@
+-- ============================================
+-- Cab Booking System Database Schema
+-- ============================================
+
+-- Create Database
+CREATE DATABASE IF NOT EXISTS cab_booking_db;
+USE cab_booking_db;
+
+-- ============================================
+-- USERS TABLE
+-- ============================================
+
+CREATE TABLE IF NOT EXISTS users (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    email VARCHAR(255) UNIQUE,
+    name VARCHAR(255),
+    phone VARCHAR(255),
+    password VARCHAR(255),
+    PRIMARY KEY (id)
+);
+
+-- ============================================
+-- BOOKINGS TABLE
+-- ============================================
+
+CREATE TABLE IF NOT EXISTS bookings (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    cab_type VARCHAR(255),
+    drop_location VARCHAR(255),
+    fare DOUBLE NOT NULL,
+    pickup VARCHAR(255),
+    booking_time DATETIME(6),
+    user_id BIGINT,
+    distance DOUBLE,
+    payment_mode VARCHAR(255),
+    status VARCHAR(255),
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- ============================================
+-- SAMPLE CHECK QUERIES
+-- ============================================
+
+SELECT * FROM users;
+SELECT * FROM bookings;
