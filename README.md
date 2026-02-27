@@ -71,7 +71,7 @@ One user can create multiple bookings (One-to-Many relationship).
 ## ⚙️ How to Run the Project
 
 1. Clone the repository  
-   git clone https://github.com/yourusername/Cab-Booking-System.git
+   git clone https://github.com/pranavpashte/Cab-Booking-System.git
 
 2. Create MySQL database  
    Run the provided `cab_booking_db.sql` file in MySQL.
